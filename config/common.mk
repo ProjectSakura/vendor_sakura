@@ -289,6 +289,10 @@ PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
     vendor/lineage/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml 
 
+# Fix Dialer
+PRODUCT_COPY_FILES +=  \
+    vendor/lineage/prebuilt/common/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+
 # Include Sakura's theme files
 include vendor/lineage/themes/backgrounds/themes.mk
 
