@@ -139,6 +139,10 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     WeatherProvider
 
+# LongShot
+PRODUCT_PACKAGES += \
+    Longshot
+
 # Accents
 PRODUCT_PACKAGES += \
     LineageBlackTheme \
