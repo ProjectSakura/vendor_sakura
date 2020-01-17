@@ -192,7 +192,9 @@ PRODUCT_PACKAGES += \
     SystemStyleOverlay \
     SystemUIStyleOverlay \
     SystemNightOverlay \
-    SystemUINightOverlay
+    SystemUINightOverlay \
+    SystemSolarizedDarkOverlay \
+    SystemUISolarizedDarkOverlay
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
