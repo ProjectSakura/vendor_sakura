@@ -260,6 +260,8 @@ SAKURA_VERSION := $(LINEAGE_VERSION)
 # Bootanimation
 include vendor/lineage/config/bootanimation.mk
 
+# Include Sakura's theme files
+include vendor/lineage/themes/backgrounds/themes.mk
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
-
