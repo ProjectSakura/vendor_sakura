@@ -225,5 +225,8 @@ LINEAGE_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINO
 LINEAGE_DISPLAY_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-$(SAKURA_BUILD)
 SAKURA_VERSION := $(LINEAGE_VERSION)
 
+# Include Sakura's theme files
+include vendor/lineage/themes/backgrounds/themes.mk
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
