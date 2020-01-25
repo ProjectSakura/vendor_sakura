@@ -3,7 +3,7 @@ $(call inherit-product-if-exists, vendor/extra/product.mk)
 $(call inherit-product-if-exists, vendor/lineage/config/crdroid.mk)
 $(call inherit-product-if-exists, vendor/addons/config.mk)
 
-PRODUCT_BRAND ?= Project Sakura
+PRODUCT_BRAND ?= ProjectSakura
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -116,19 +116,12 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
-# Bootanimation
-PRODUCT_PACKAGES += \
-    bootanimation.zip
-
 # AOSP packages
 PRODUCT_PACKAGES += \
-    ExactCalculator \
-    Exchange2 \
-    Terminal
+    ExactCalculator
 
 # Lineage packages
 PRODUCT_PACKAGES += \
-    AudioFX \
     Backgrounds \
     LineageParts \
     LineageSettingsProvider \
@@ -138,7 +131,6 @@ PRODUCT_PACKAGES += \
     LockClock \
     Profiles \
     TrebuchetQuickStep \
-    Updater \
     WeatherProvider
 
 # Accents
@@ -246,10 +238,9 @@ PRODUCT_VERSION_MAJOR = 10
 PRODUCT_VERSION_MINOR = 1
 
 # Increase sakura Version with each major release.
-SAKURA_VERSION := beta
-LINEAGE_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d)-$(LINEAGE_BUILD)-v$(SAKURA_VERSION)
-LINEAGE_DISPLAY_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-v$(SAKURA_VERSION)
-
+LINEAGE_VERSION := ProjectSakura-v$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d-%H%M)-$(LINEAGE_BUILD)-BETA
+LINEAGE_DISPLAY_VERSION := ProjectSakura-v$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-BETA
+SAKURA_VERSION := $(LINEAGE_VERSION)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
