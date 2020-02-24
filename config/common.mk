@@ -125,7 +125,7 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 PRODUCT_PACKAGES += \
     ExactCalculator
 
-# Lineage packages
+# Extra packages
 PRODUCT_PACKAGES += \
     Backgrounds \
     LineageParts \
@@ -133,6 +133,7 @@ PRODUCT_PACKAGES += \
     LineageSetupWizard \
     Eleven \
     Jelly \
+    OmniStyle \
     LockClock \
     Profiles \
     TrebuchetQuickStep \
