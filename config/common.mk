@@ -17,7 +17,7 @@ endif
 
 # Default notification/alarm sounds
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.config.notification_sound=Argon.ogg \
+    ro.config.notification_sound=Pikachu.ogg \
     ro.config.alarm_alert=Hassium.ogg
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
@@ -244,13 +244,16 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/lineage/overlay/common
 
-PRODUCT_VERSION_MAJOR = 10
-PRODUCT_VERSION_MINOR = 1
+PRODUCT_VERSION_MAJOR = 1
+PRODUCT_VERSION_MINOR = Q
 
 # Increase sakura Version with each major release.
-LINEAGE_VERSION := ProjectSakura-v$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d-%H%M)-$(LINEAGE_BUILD)-BETA
-LINEAGE_DISPLAY_VERSION := ProjectSakura-v$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-BETA
+LINEAGE_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d-%H%M)-$(LINEAGE_BUILD)-BETA
+LINEAGE_DISPLAY_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-BETA
 SAKURA_VERSION := $(LINEAGE_VERSION)
+
+# Bootanimation
+include vendor/lineage/config/bootanimation.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
