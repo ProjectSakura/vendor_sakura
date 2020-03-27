@@ -258,6 +258,7 @@ DEVICE_PACKAGE_OVERLAYS += vendor/lineage/overlay/common
 PRODUCT_VERSION_MAJOR = 1
 PRODUCT_VERSION_MINOR = Q
 
+#Gapps
 ifeq ($(SAKURA_GAPPS), true)
     $(call inherit-product, vendor/gapps/config.mk)
     SAKURA_BUILD_ZIP_TYPE := GAPPS
@@ -270,6 +271,16 @@ ifeq ($(SAKURA_GAPPS),false)
     PRODUCT_PACKAGES += \
               Launcher3
 endif
+
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := false
+ifneq ($(TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK), true)
+PRODUCT_PACKAGES += \
+    FaceUnlockService
+TARGET_FACE_UNLOCK_SUPPORTED := true
+endif
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
 
 # Increase sakura Version with each major release.
 LINEAGE_VERSION := ProjectSakura-$(SAKURA_BUILD_ZIP_TYPE)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d-%H%M)-$(LINEAGE_BUILD)-BETA
