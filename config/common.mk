@@ -246,6 +246,7 @@ endif
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
+    Launcher3QuickStep \
     SystemUI
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay
@@ -253,12 +254,6 @@ DEVICE_PACKAGE_OVERLAYS += vendor/lineage/overlay/common
 
 PRODUCT_VERSION_MAJOR = 1
 PRODUCT_VERSION_MINOR = Q
-
-
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.sakura.version=$(LINEAGE_VERSION) \
-  ro.sakura.releasetype=Official \
-  ro.sakura.ziptype=$(PRODUCT_VERSION_MAJOR)$(PRODUCT_VERSION_MINOR)
 
 # Increase sakura Version with each major release.
 LINEAGE_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d-%H%M)-$(LINEAGE_BUILD)-BETA
