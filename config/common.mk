@@ -141,7 +141,6 @@ PRODUCT_PACKAGES += \
     LockClock \
     Profiles \
     TrebuchetQuickStep \
-    Launcher3 \
     Updater \
     AudioFX \
     WeatherProvider
@@ -258,11 +257,18 @@ DEVICE_PACKAGE_OVERLAYS += vendor/lineage/overlay/common
 
 PRODUCT_VERSION_MAJOR = 1
 PRODUCT_VERSION_MINOR = Q
-SAKURA_BUILD_ZIP_TYPE := VANILLA
 
 ifeq ($(SAKURA_GAPPS), true)
     $(call inherit-product, vendor/gapps/config.mk)
     SAKURA_BUILD_ZIP_TYPE := GAPPS
+    PRODUCT_PACKAGES += \
+              Lawnchair
+endif
+
+ifeq ($(SAKURA_GAPPS),false)
+    SAKURA_BUILD_ZIP_TYPE := VANILLA
+    PRODUCT_PACKAGES += \
+              Launcher3
 endif
 
 # Increase sakura Version with each major release.
@@ -272,6 +278,11 @@ SAKURA_VERSION := $(LINEAGE_VERSION)
 
 # Bootanimation
 include vendor/lineage/config/bootanimation.mk
+
+# Lawnchair
+PRODUCT_COPY_FILES += \
+    vendor/lineage/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
+    vendor/lineage/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml 
 
 # Include Sakura's theme files
 include vendor/lineage/themes/backgrounds/themes.mk
