@@ -264,6 +264,7 @@ SAKURA_BUILD_ZIP_TYPE := VANILLA
 ifeq ($(SAKURA_GAPPS), true)
     $(call inherit-product, vendor/gapps/config.mk)
     SAKURA_BUILD_ZIP_TYPE := GAPPS
+    IS_PHONE := true
 endif
 
 # Face Unlock
