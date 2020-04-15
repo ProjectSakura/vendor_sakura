@@ -146,9 +146,9 @@ PRODUCT_PACKAGES += \
     AudioFX \
     WeatherProvider
 
-# LongShot
+# StitchImage
 PRODUCT_PACKAGES += \
-    Longshot
+    StitchImage
 
 # Accents
 PRODUCT_PACKAGES += \
