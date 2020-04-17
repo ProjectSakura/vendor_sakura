@@ -142,6 +142,7 @@ PRODUCT_PACKAGES += \
     Profiles \
     TrebuchetQuickStep \
     Lawnchair \
+    OPScreenRecorder \
     Updater \
     AudioFX \
     WeatherProvider
