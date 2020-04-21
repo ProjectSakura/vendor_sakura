@@ -8,7 +8,8 @@ endif
     ro.sakura.build.version=$(LINEAGE_VERSION) \
     ro.sakura.display.version=$(LINEAGE_DISPLAY_VERSION) \
     ro.sakura.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-    ro.modversion=$(SAKURA_VERSION)
+    ro.modversion=$(SAKURA_VERSION) \
+    ro.lineage.version=$(LINEAGE_VERSION)
 
 # LineageOS Platform SDK Version
 ADDITIONAL_BUILD_PROPERTIES += \
