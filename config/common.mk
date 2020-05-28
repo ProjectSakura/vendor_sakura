@@ -192,6 +192,10 @@ PRODUCT_PACKAGES += \
     wget \
     zip
 
+# Customizations
+PRODUCT_PACKAGES += \
+    LineageNavigationBarNoHint
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
