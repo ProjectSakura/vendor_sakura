@@ -9,4 +9,7 @@ PRODUCT_PACKAGES += \
     ChocoXSystemOverlay \
     ChocoXSystemUIOverlay \
     MaterialOceanSystemOverlay \
-    MaterialOceanSystemUIOverlay
+    MaterialOceanSystemUIOverlay \
+    SystemMizuThemeOverlay \
+    SystemUIMizuThemeOverlay \
+    SettingsMizuThemeOverlay
