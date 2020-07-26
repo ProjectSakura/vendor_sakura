@@ -142,7 +142,6 @@ PRODUCT_PACKAGES += \
     LockClock \
     Profiles \
     TrebuchetQuickStep \
-    Lawnchair \
     OPScreenRecorder \
     AudioFX \
     WeatherProvider
@@ -298,9 +297,9 @@ SAKURA_VERSION := $(LINEAGE_VERSION)
 include vendor/lineage/config/bootanimation.mk
 
 # Lawnchair
-PRODUCT_COPY_FILES += \
-    vendor/lineage/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
-    vendor/lineage/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml 
+#PRODUCT_COPY_FILES += \
+#    vendor/lineage/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
+#    vendor/lineage/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml 
 
 # Fix Dialer
 PRODUCT_COPY_FILES +=  \
