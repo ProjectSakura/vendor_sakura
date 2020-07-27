@@ -297,9 +297,17 @@ SAKURA_VERSION := $(LINEAGE_VERSION)
 include vendor/lineage/config/bootanimation.mk
 
 # Lawnchair
+ifeq ($(LAWNCHAIR_OPTOUT),)
+include vendor/addons/lawnchair/lawnchair.mk
+endif
 #PRODUCT_COPY_FILES += \
 #    vendor/lineage/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
 #    vendor/lineage/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml 
+
+# OPLauncher
+ifeq ($(LAWNCHAIR_OPTOUT), true)
+include vendor/addons/oplauncher/OPLauncher2.mk
+endif
 
 # Fix Dialer
 PRODUCT_COPY_FILES +=  \
