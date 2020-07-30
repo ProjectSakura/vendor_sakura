@@ -278,7 +278,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 #Gapps
 ifeq ($(SAKURA_GAPPS), true)
-    $(call inherit-product, vendor/gapps/config.mk)
+    $(call inherit-product, vendor/google/gapps/gapps-vendor.mk)
     SAKURA_BUILD_ZIP_TYPE := GAPPS
     IS_PHONE := true
 endif
