@@ -24,6 +24,8 @@ $(LINEAGE_TARGET_PACKAGE): $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(LINEAGE_TARGET_PACKAGE)
 	$(hide) $(SHA256) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).sha256sum
 	@echo "Package Complete: $(LINEAGE_TARGET_PACKAGE)" >&2
+	@echo "Creating json OTA..." >&2
+	$(hide) ./vendor/lineage/build/tools/createjson.sh
 
 .PHONY: bacon
 bacon: $(LINEAGE_TARGET_PACKAGE) $(DEFAULT_GOAL)
