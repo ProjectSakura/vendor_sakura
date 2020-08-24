@@ -220,7 +220,28 @@ PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/fonts/LGSmartGothic/LGSmartGothic.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/LGSmartGothic.ttf \
     vendor/lineage/prebuilt/fonts/Rosemary/Rosemary-Regular.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/Rosemary-Regular.ttf \
     vendor/lineage/prebuilt/fonts/SonySketch/SonySketch.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/SonySketch.ttf \
-    vendor/lineage/prebuilt/fonts/Surfer/Surfer.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/Surfer.ttf
+    vendor/lineage/prebuilt/fonts/Surfer/Surfer.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/Surfer.ttf \
+    vendor/lineage/prebuilt/fonts/GoogleSans/GoogleSans-Bold.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/GoogleSans-Bold.ttf \
+    vendor/lineage/prebuilt/fonts/GoogleSans/GoogleSans-BoldItalic.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/GoogleSans-BoldItalic.ttf \
+    vendor/lineage/prebuilt/fonts/GoogleSans/GoogleSans-Italic.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/GoogleSans-Italic.ttf \
+    vendor/lineage/prebuilt/fonts/GoogleSans/GoogleSans-Medium.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/GoogleSans-Medium.ttf \
+    vendor/lineage/prebuilt/fonts/GoogleSans/GoogleSans-MediumItalic.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/GoogleSans-MediumItalic.ttf \
+    vendor/lineage/prebuilt/fonts/GoogleSans/GoogleSans-Regular.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/GoogleSans-Regular.ttf \
+    vendor/lineage/prebuilt/fonts/OnePlusSlate/OnePlusSlate-Book.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/OnePlusSlate-Book.ttf \
+    vendor/lineage/prebuilt/fonts/OnePlusSlate/OnePlusSlate-Medium.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/OnePlusSlate-Medium.ttf \
+    vendor/lineage/prebuilt/fonts/OnePlusSlate/OnePlusSlate-Regular.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/OnePlusSlate-Regular.ttf \
+    vendor/lineage/prebuilt/fonts/SanFrancisco/SanFrancisco-Bold.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/SanFrancisco-Bold.ttf \
+    vendor/lineage/prebuilt/fonts/SanFrancisco/SanFrancisco-BoldItalic.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/SanFrancisco-BoldItalic.ttf \
+    vendor/lineage/prebuilt/fonts/SanFrancisco/SanFrancisco-Italic.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/SanFrancisco-Italic.ttf \
+    vendor/lineage/prebuilt/fonts/SanFrancisco/SanFrancisco-Medium.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/SanFrancisco-Medium.ttf \
+    vendor/lineage/prebuilt/fonts/SanFrancisco/SanFrancisco-MediumItalic.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/SanFrancisco-MediumItalic.ttf \
+    vendor/lineage/prebuilt/fonts/SanFrancisco/SanFrancisco-Regular.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/SanFrancisco-Regular.ttf \
+    vendor/lineage/prebuilt/fonts/Inter/Inter-Bold.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/Inter-Bold.ttf \
+    vendor/lineage/prebuilt/fonts/Inter/Inter-BoldItalic.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/Inter-BoldItalic.ttf \
+    vendor/lineage/prebuilt/fonts/Inter/Inter-Italic.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/Inter-Italic.ttf \
+    vendor/lineage/prebuilt/fonts/Inter/Inter-Medium.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/Inter-Medium.ttf \
+    vendor/lineage/prebuilt/fonts/Inter/Inter-MediumItalic.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/Inter-MediumItalic.ttf \
+    vendor/lineage/prebuilt/fonts/Inter/Inter-Regular.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/Inter-Regular.ttf
 
 # Charger
 PRODUCT_PACKAGES += \
