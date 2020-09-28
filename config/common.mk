@@ -185,8 +185,8 @@ PRODUCT_COPY_FILES += \
 # Custom Overlays
 # Settings
 PRODUCT_PACKAGES += \
-    SystemPitchBlackOverlay \
-    SystemUIPitchBlackOverlay \
+    SystemRavenBlackOverlay \
+    SystemUIRavenBlackOverlay \
     SystemDarkGrayOverlay \
     SystemUIDarkGrayOverlay \
     SystemStyleOverlay \
@@ -302,3 +302,4 @@ SAKURA_VERSION := $(LINEAGE_VERSION)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
+
