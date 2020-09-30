@@ -110,8 +110,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LineageParts \
     LineageSettingsProvider \
-    LineageSetupWizard \
-    Updater
+    LineageSetupWizard
 
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/etc/init/init.lineage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-updater.rc
@@ -194,11 +193,13 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/common
 
 PRODUCT_VERSION_MAJOR = 6
 PRODUCT_VERSION_MINOR = 0
-SAKURA_BUILD := ALPHA
+SAKURA_BUILD := UNOFFICIAL-ALPHA
 
 #Official and unofficial for the sake of the world
 ifeq ($(SAKURA_OFFICIAL), true)
-    SAKURA_BUILD := OFFICIAL
+    SAKURA_BUILD := OFFICIAL-ALPHA
+    PRODUCT_PACKAGES += \
+    Updater
 endif
 
 #Gapps
