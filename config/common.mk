@@ -194,10 +194,22 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/common
 
 PRODUCT_VERSION_MAJOR = 6
 PRODUCT_VERSION_MINOR = 0
+SAKURA_BUILD := ALPHA
+
+#Official and unofficial for the sake of the world
+ifeq ($(SAKURA_OFFICIAL), true)
+    SAKURA_BUILD := OFFICIAL
+endif
+
+#Gapps
+#ifeq ($(SAKURA_GAPPS), true)
+#￼   $(call inherit-product, vendor/gapps/config.mk)
+#￼   SAKURA_BUILD_ZIP_TYPE := GAPPS
+#endif
 
 # Increase sakura Version with each major release.
-LINEAGE_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d-%H%M)-$(LINEAGE_BUILD)-BETA
-LINEAGE_DISPLAY_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-BETA
+LINEAGE_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d-%H%M)-$(LINEAGE_BUILD)-$(SAKURA_BUILD)
+LINEAGE_DISPLAY_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-$(SAKURA_BUILD)
 SAKURA_VERSION := $(LINEAGE_VERSION)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
