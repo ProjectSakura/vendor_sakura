@@ -71,6 +71,11 @@ PRODUCT_PACKAGES += \
     IconShapeSquareOverlay \
     NavigationBarMode2ButtonOverlay
 
+# Navbar
+PRODUCT_PACKAGES += \
+    GesturalNavigationOverlayLong \
+    GesturalNavigationOverlayMedium
+
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
