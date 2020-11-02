@@ -28,6 +28,11 @@ PRODUCT_PACKAGES += \
 endif
 endif
 
+# Blur
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.sf.blurs_are_expensive=1 \
+    ro.surface_flinger.supports_background_blur=1
+
 # Extra cmdline tools
 PRODUCT_PACKAGES += \
     unrar \
