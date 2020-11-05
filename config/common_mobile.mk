@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
     Jelly \
     Profiles \
     Seedvault \
+    OmniStyle \
     TrebuchetQuickStep
 
 # Accents
