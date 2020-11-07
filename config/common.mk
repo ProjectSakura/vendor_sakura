@@ -200,11 +200,11 @@ DEVICE_PACKAGE_OVERLAYS += vendor/lineage/overlay/common
 
 PRODUCT_VERSION_MAJOR = 3
 PRODUCT_VERSION_MINOR = R
-SAKURA_BUILD := UNOFFICIAL-ALPHA
+SAKURA_BUILD := UNOFFICIAL-BETA
 
 #Official and unofficial for the sake of the world
 ifeq ($(SAKURA_OFFICIAL), true)
-    SAKURA_BUILD := OFFICIAL-ALPHA
+    SAKURA_BUILD := OFFICIAL-BETA
     PRODUCT_PACKAGES += \
     Updater
 endif
