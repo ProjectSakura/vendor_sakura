@@ -6,19 +6,7 @@ blu='\033[0;34m'             #  blue
 ppl='\033[0;35m'             #  purple
 cya='\033[0;36m'             #  cyan
 
-echo -e ${blu}"=========================================================================="
-echo -e ${ylw}"* ╭━━━╮╱╱╱╱╱╱╱╱╱╱╱╭╮╱╭━━━╮╱╱╭╮                                            "
-echo -e ${ylw}"* ┃╭━╮┃╱╱╱╱╭╮╱╱╱╱╭╯╰╮┃╭━╮┃╱╱┃┃                                            "
-echo -e ${ylw}"* ┃╰━╯┣━┳━━╋╋━━┳━┻╮╭╯┃╰━━┳━━┫┃╭┳╮╭┳━┳━━╮                                  "
-echo -e ${ylw}"* ┃╭━━┫╭┫╭╮┣┫┃━┫╭━┫┃╱╰━━╮┃╭╮┃╰╯┫┃┃┃╭┫╭╮┃                                  "
-echo -e ${ylw}"* ┃┃╱╱┃┃┃╰╯┃┃┃━┫╰━┫╰╮┃╰━╯┃╭╮┃╭╮┫╰╯┃┃┃╭╮┃                                  "
-echo -e ${ylw}"* ╰╯╱╱╰╯╰━━┫┣━━┻━━┻━╯╰━━━┻╯╰┻╯╰┻━━┻╯╰╯╰╯                                  "
-echo -e ${ylw}"* ╱╱╱╱╱╱╱╱╭╯┃                                                             "
-echo -e ${ylw}"* ╱╱╱╱╱╱╱╱╰━╯                                                             "
-echo -e ${cya}"* THANK YOU FOR BUILDING PROJECT SAKURA                                   "
-echo -e ${blu}"=========================================================================="
-echo -e ${cya}"You can use the below generated json to push OTA."
-echo " "
+echo "# GENERATING OTA JSON #"
 echo "{"
 echo '"response": ['
 echo "{"
@@ -28,9 +16,9 @@ echo ' "id":' "\"$((cat $OUT/ProjectSakura*.zip.md5sum) | cut -d ' ' -f1)\","
 echo ' "romtype":'"\"nightly\","
 echo ' "size":' "$(stat -c%s $OUT/ProjectSakura*.zip)",
 echo ' "url":' "\"https://master.dl.sourceforge.net/project/projectsakura/$LINEAGE_BUILD/$(basename $(ls $OUT/ProjectSakura*.zip))\","
-echo ' "version":' "\"2.Q\""
+echo ' "version":' "\"3.R\""
 echo "}"
 echo "]"
 echo "}"
 echo " "
-echo -e ${grn}"BUILD IS DONE!"
+echo -e ${grn}"DONE!"
