@@ -34,7 +34,6 @@ PRODUCT_PACKAGES += \
 # Accents
 PRODUCT_PACKAGES += \
     LineageBlackTheme \
-    LineageDarkTheme \
     LineageBlackAccent \
     LineageBlueAccent \
     LineageBrownAccent \
