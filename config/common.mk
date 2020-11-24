@@ -202,7 +202,9 @@ PRODUCT_PACKAGES += \
     SystemChocoXOverlay \
     SystemUIChocoXOverlay \
     SystemDarkAubergineOverlay \
-    SystemUIDarkAubergineOverlay
+    SystemUIDarkAubergineOverlay \
+    SystemXtendedClearOverlay \
+    SystemUIXtendedClearOverlay
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
@@ -302,4 +304,3 @@ SAKURA_VERSION := $(LINEAGE_VERSION)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
-
