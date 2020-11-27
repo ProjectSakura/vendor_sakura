@@ -198,6 +198,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/common
 PRODUCT_VERSION_MAJOR = 6
 PRODUCT_VERSION_MINOR = 0
 SAKURA_BUILD := UNOFFICIAL-ALPHA
+SAKURA_BUILD_ZIP_TYPE := VANILLA
 
 #Official and unofficial for the sake of the world
 ifeq ($(SAKURA_OFFICIAL), true)
@@ -207,13 +208,13 @@ ifeq ($(SAKURA_OFFICIAL), true)
 endif
 
 #Gapps
-#ifeq ($(SAKURA_GAPPS), true)
-#￼   $(call inherit-product, vendor/gapps/config.mk)
-#￼   SAKURA_BUILD_ZIP_TYPE := GAPPS
-#endif
+ifeq ($(SAKURA_GAPPS), true)
+    $(call inherit-product, vendor/gapps/gapps.mk)
+    SAKURA_BUILD_ZIP_TYPE := GAPPS
+endif
 
 # Increase sakura Version with each major release.
-LINEAGE_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d-%H%M)-$(LINEAGE_BUILD)-$(SAKURA_BUILD)
+LINEAGE_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(SAKURA_BUILD_ZIP_TYPE)-$(shell date +%Y%m%d-%H%M)-$(LINEAGE_BUILD)-$(SAKURA_BUILD)
 LINEAGE_DISPLAY_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-$(SAKURA_BUILD)
 SAKURA_VERSION := $(LINEAGE_VERSION)
 
