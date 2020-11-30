@@ -23,3 +23,7 @@ ADDITIONAL_BUILD_PROPERTIES += \
 # LineageOS Platform Internal Version
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.lineage.build.version.plat.rev=$(LINEAGE_PLATFORM_REV)
+
+# additional sakura props
+ADDITIONAL_BUILD_PROPERTIES += \
+    ro.sakura.maintainer=$(SAKURA_MAINTAINER)
