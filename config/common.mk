@@ -203,6 +203,7 @@ SAKURA_BUILD_ZIP_TYPE := VANILLA
 
 #Official and unofficial for the sake of the world
 ifeq ($(SAKURA_OFFICIAL), true)
+include vendor/sakura-priv/keys.mk
     SAKURA_BUILD := OFFICIAL
     PRODUCT_PACKAGES += \
     Updater
