@@ -203,8 +203,8 @@ PRODUCT_PACKAGES += \
     SystemUIChocoXOverlay \
     SystemDarkAubergineOverlay \
     SystemUIDarkAubergineOverlay \
-    SystemXtendedClearOverlay \
-    SystemUIXtendedClearOverlay
+    SystemClearSpringOverlay \
+    SystemUIClearSpringOverlay
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
