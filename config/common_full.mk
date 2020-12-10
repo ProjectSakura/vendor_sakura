@@ -13,6 +13,3 @@ PRODUCT_PACKAGES += \
     LineageLatoFont \
     LineageRubikFont
 
-# Recorder
-PRODUCT_PACKAGES += \
-    Recorder
