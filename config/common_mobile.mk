@@ -10,7 +10,7 @@ include vendor/lineage/config/lineage_audio.mk
 
 # Default notification/alarm sounds
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.notification_sound=Argon.ogg \
+    ro.config.notification_sound=Pikachu.ogg \
     ro.config.alarm_alert=Hassium.ogg
 
 # Apps
