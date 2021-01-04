@@ -69,7 +69,6 @@ PRODUCT_PACKAGES += \
 # Customizations
 PRODUCT_PACKAGES += \
     IconShapeSquareOverlay \
-    LineageNavigationBarNoHint \
     NavigationBarMode2ButtonOverlay
 
 # Media
