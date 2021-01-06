@@ -240,7 +240,7 @@ endif
 
 #Gapps
 ifeq ($(SAKURA_GAPPS), true)
-    $(call inherit-product, vendor/gapps/gapps.mk)
+    $(call inherit-product, vendor/google/gms/gms-vendor.mk)
     SAKURA_BUILD_ZIP_TYPE := GAPPS
 endif
 
