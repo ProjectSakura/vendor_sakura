@@ -23,6 +23,7 @@ PRODUCT_PACKAGES += \
     Jelly \
     Profiles \
     Seedvault \
+    SakuraWidget \
     OmniStyle
 
 # GVM
