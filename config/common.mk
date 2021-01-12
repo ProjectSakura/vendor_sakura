@@ -238,11 +238,16 @@ include vendor/sakura-priv/keys.mk
     Updater
 endif
 
-#Gapps
-ifeq ($(SAKURA_GAPPS), true)
+#build type
+ifeq ($(SAKURA_BUILD_TYPE), gapps)
     $(call inherit-product, vendor/google/gms/gms-vendor.mk)
     SAKURA_BUILD_ZIP_TYPE := GAPPS
+else ifeq ($(SAKURA_BUILD_TYPE), microg)
+    $(call inherit-product, prebuilts/prebuiltapks/microg.mk)
+    SAKURA_BUILD_ZIP_TYPE := MICROG
 endif
+
+
 
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED := false
