@@ -1,5 +1,6 @@
 # Inherit common mobile Lineage stuff
 $(call inherit-product, vendor/lineage/config/common.mk)
+$(call inherit-product-if-exists, vendor/addons/themes/accents/accents.mk)
 
 # Default notification/alarm sounds
 PRODUCT_PRODUCT_PROPERTIES += \

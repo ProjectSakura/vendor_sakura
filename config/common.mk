@@ -247,7 +247,10 @@ else ifeq ($(SAKURA_BUILD_TYPE), microg)
     SAKURA_BUILD_ZIP_TYPE := MICROG
 endif
 
-
+#OPLauncher
+ifeq ($(SAKURA_OPLAUNCHER), true)
+    $(call inherit-product, vendor/addons/prebuilt/app/OPLauncher/OPLauncher.mk)
+endif
 
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED := false
