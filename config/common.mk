@@ -240,7 +240,7 @@ endif
 
 #build type
 ifeq ($(SAKURA_BUILD_TYPE), gapps)
-    $(call inherit-product, vendor/google/gms/gms-vendor.mk)
+    $(call inherit-product, vendor/gapps/common/common-vendor.mk)
     SAKURA_BUILD_ZIP_TYPE := GAPPS
 else ifeq ($(SAKURA_BUILD_TYPE), microg)
     $(call inherit-product, prebuilts/prebuiltapks/microg.mk)
