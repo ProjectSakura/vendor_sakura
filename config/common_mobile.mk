@@ -21,6 +21,7 @@ PRODUCT_PACKAGES += \
     SakuraWidget \
     StitchImage \
     StitchImageService \
+    OmniJaws \
     OmniStyle
 
 # GVM
