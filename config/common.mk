@@ -1,6 +1,7 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 $(call inherit-product-if-exists, vendor/lineage/config/sakura.mk)
+$(call inherit-product-if-exists, vendor/addons/config.mk)
 
 # Bootanimation
 include vendor/lineage/config/bootanimation.mk
@@ -253,14 +254,15 @@ ifeq ($(SAKURA_OPLAUNCHER), true)
 endif
 
 # Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED := false
-ifneq ($(TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK), true)
+TARGET_FACE_UNLOCK_SUPPORTED ?= true
+ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
 PRODUCT_PACKAGES += \
     FaceUnlockService
-TARGET_FACE_UNLOCK_SUPPORTED := true
-endif
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
+    ro.face_unlock_service.enabled=$(TARGET_FACE_UNLOCK_SUPPORTED)
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
+endif
 
 # Increase sakura Version with each major release.
 LINEAGE_VERSION := ProjectSakura-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(SAKURA_BUILD_ZIP_TYPE)-$(shell date +%Y%m%d-%H%M)-$(LINEAGE_BUILD)-$(SAKURA_BUILD)
