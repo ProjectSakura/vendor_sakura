@@ -42,6 +42,8 @@ PRODUCT_PACKAGES += \
 
 # Custom Theme Overlays
 PRODUCT_PACKAGES += \
+    SystemDark12Overlay \
+    SystemUIDark12Overlay \
     SystemRavenBlackOverlay \
     SystemUIRavenBlackOverlay \
     SystemDarkGrayOverlay \
