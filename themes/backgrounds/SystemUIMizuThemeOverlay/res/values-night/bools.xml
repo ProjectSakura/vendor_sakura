@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ Copyright (C) 2018 The Android Open Source Project
   ~
@@ -13,10 +13,8 @@
   ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License
+  NOTE: You might also want to edit: core/res/res/values-night/*.xml
   -->
-
 <resources>
-
-    <color name="theme_background_mizu">#ae000000</color>
-
+    <bool name="config_drawNotificationBackground">false</bool>
 </resources>
