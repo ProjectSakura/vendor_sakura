@@ -141,6 +141,7 @@ PRODUCT_PACKAGES += \
     OmniStyle \
     LockClock \
     Profiles \
+    Seedvault \
     TrebuchetQuickStep \
     OPScreenRecorder \
     AudioFX \
