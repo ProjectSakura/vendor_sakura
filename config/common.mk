@@ -257,6 +257,11 @@ endif
 #    $(call inherit-product, vendor/addons/prebuilt/app/OPLauncher/OPLauncher.mk)
 #endif
 
+#lawnchair
+ifeq ($(SAKURA_LAWNCHAIR), true)
+    $(call inherit-product, vendor/addons/prebuilt/app/Lawnchair/lawnchair.mk)
+endif
+
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED ?= true
 ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
