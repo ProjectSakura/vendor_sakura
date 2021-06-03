@@ -55,6 +55,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/lineage/config/permissions/privapp-permissions-omni.xml:system/etc/permissions/privapp-permissions-omni.xml
 
+# permission for custom fonts manager
+PRODUCT_COPY_FILES += \
+    vendor/lineage/config/permissions/privapp-permissions-fonts-system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-fonts-system_ext.xml
+
 # Hotword support for legacy devices
 PRODUCT_COPY_FILES += \
     vendor/lineage/config/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml \
