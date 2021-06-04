@@ -62,3 +62,10 @@ PRODUCT_PACKAGES += \
     SystemUIDarkAubergineOverlay \
     SystemClearSpringOverlay \
     SystemUIClearSpringOverlay
+
+# Volume Panel styles
+PRODUCT_PACKAGES += \
+    AospPanel \
+￼   CompactPanel \
+    OreoPanel \
+    TiledPanel
