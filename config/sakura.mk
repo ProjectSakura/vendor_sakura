@@ -24,3 +24,41 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.services.whitelist.packagelist=com.google.android.gms
+
+# Gvisual mod
+PRODUCT_PACKAGES += \
+    GVM-SBH-L \
+    GVM-SBH-M \
+    GVM-SBH-XL \
+    GVM-URM-M \
+    GVM-URM-L \
+    GVM-URM-R
+
+# Navigation handle length
+PRODUCT_PACKAGES += \
+    GesturalNavigationOverlayLong \
+    GesturalNavigationOverlayMedium \
+    GesturalNavigationOverlayHidden
+
+# Custom Theme Overlays
+PRODUCT_PACKAGES += \
+    SystemRavenBlackOverlay \
+    SystemUIRavenBlackOverlay \
+    SystemDarkGrayOverlay \
+    SystemUIDarkGrayOverlay \
+    SystemStyleOverlay \
+    SystemUIStyleOverlay \
+    SystemNightOverlay \
+    SystemUINightOverlay \
+    SystemSolarizedDarkOverlay \
+    SystemUISolarizedDarkOverlay \
+    SystemMaterialOceanOverlay \
+    SystemUIMaterialOceanOverlay \
+    SystemBakedGreenOverlay \
+    SystemUIBakedGreenOverlay \
+    SystemChocoXOverlay \
+    SystemUIChocoXOverlay \
+    SystemDarkAubergineOverlay \
+    SystemUIDarkAubergineOverlay \
+    SystemClearSpringOverlay \
+    SystemUIClearSpringOverlay

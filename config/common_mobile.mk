@@ -25,15 +25,6 @@ PRODUCT_PACKAGES += \
     StitchImage \
     StitchImageService
 
-# GVM
-PRODUCT_PACKAGES += \
-    GVM-SBH-L \
-    GVM-SBH-M \
-    GVM-SBH-XL \
-    GVM-URM-M \
-    GVM-URM-L \
-    GVM-URM-R
-
 ifneq ($(TARGET_EXCLUDES_AUDIOFX),true)
 PRODUCT_PACKAGES += \
     AudioFX
@@ -61,12 +52,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     IconShapeSquareOverlay \
     NavigationBarMode2ButtonOverlay
-
-# Navbar
-PRODUCT_PACKAGES += \
-    GesturalNavigationOverlayLong \
-    GesturalNavigationOverlayMedium \
-    GesturalNavigationOverlayHidden
 
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \

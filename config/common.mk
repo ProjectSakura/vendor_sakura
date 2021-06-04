@@ -156,30 +156,6 @@ PRODUCT_PACKAGES += \
     wget \
     zip
 
-# Custom Overlays
-# Settings
-PRODUCT_PACKAGES += \
-    SystemRavenBlackOverlay \
-    SystemUIRavenBlackOverlay \
-    SystemDarkGrayOverlay \
-    SystemUIDarkGrayOverlay \
-    SystemStyleOverlay \
-    SystemUIStyleOverlay \
-    SystemNightOverlay \
-    SystemUINightOverlay \
-    SystemSolarizedDarkOverlay \
-    SystemUISolarizedDarkOverlay \
-    SystemMaterialOceanOverlay \
-    SystemUIMaterialOceanOverlay \
-    SystemBakedGreenOverlay \
-    SystemUIBakedGreenOverlay \
-    SystemChocoXOverlay \
-    SystemUIChocoXOverlay \
-    SystemDarkAubergineOverlay \
-    SystemUIDarkAubergineOverlay \
-    SystemClearSpringOverlay \
-    SystemUIClearSpringOverlay
-
 # Filesystems tools
 PRODUCT_PACKAGES += \
     fsck.exfat \
