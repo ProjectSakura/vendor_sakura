@@ -9,13 +9,15 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # AOSP packages
 PRODUCT_PACKAGES += \
-    Exchange2
+    Exchange2 \
+    ExactCalculator
 
 # Lineage packages
 PRODUCT_PACKAGES += \
     Backgrounds \
     Custom-Fonts \
     Eleven \
+    Etar \
     Jelly \
     OmniJaws \
     OmniStyle \
