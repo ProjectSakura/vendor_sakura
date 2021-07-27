@@ -217,9 +217,12 @@ include vendor/sakura-priv/keys.mk
 endif
 
 #build type
-ifeq ($(SAKURA_BUILD_TYPE), gapps)
-    $(call inherit-product, vendor/gapps/common/common-vendor.mk)
-    SAKURA_BUILD_ZIP_TYPE := GAPPS
+ifeq ($(SAKURA_BUILD_TYPE), coregapps)
+    $(call inherit-product, vendor/gapps/core/config.mk)
+    SAKURA_BUILD_ZIP_TYPE := GAPPS-Core
+else ifeq ($(SAKURA_BUILD_TYPE), basicgapps)
+    $(call inherit-product, vendor/gapps/basic/config.mk)
+    SAKURA_BUILD_ZIP_TYPE := GAPPS-Basic
 else ifeq ($(SAKURA_BUILD_TYPE), microg)
     $(call inherit-product, prebuilts/prebuiltapks/microg.mk)
     SAKURA_BUILD_ZIP_TYPE := MICROG
