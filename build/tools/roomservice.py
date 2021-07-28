@@ -43,7 +43,7 @@ except ImportError:
 DEBUG = False
 
 custom_local_manifest = ".repo/local_manifests/default.xml"
-custom_default_revision = "10"
+custom_default_revision = "11"
 custom_dependencies = "sakura.dependencies"
 org_manifest = "Sakura-Devices"  # leave empty if org is provided in manifest
 org_display = "Sakura-Devices"  # needed for displaying
