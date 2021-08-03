@@ -201,7 +201,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay
-DEVICE_PACKAGE_OVERLAYS += vendor/lineage/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/common
 
 #Sakura
 PRODUCT_VERSION_MAJOR = 5
