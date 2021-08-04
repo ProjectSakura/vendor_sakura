@@ -18,6 +18,7 @@ PRODUCT_PACKAGES += \
     Custom-Fonts \
     Eleven \
     Etar \
+    Firewall \
     Jelly \
     OmniJaws \
     OmniStyle \
