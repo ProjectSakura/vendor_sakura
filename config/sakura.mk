@@ -24,3 +24,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.services.whitelist.packagelist=com.google.android.gms
+
+# Enable one-handed mode
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_one_handed_mode=true
