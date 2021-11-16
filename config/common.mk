@@ -229,6 +229,10 @@ else ifeq ($(SAKURA_BUILD_TYPE), microg)
     SAKURA_BUILD_ZIP_TYPE := MICROG
 endif
 
+#buildtype prop for displaying it in settings
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+        ro.sakura.buildtype=$(SAKURA_BUILD_ZIP_TYPE)
+
 #OPLauncher
 #ifeq ($(SAKURA_OPLAUNCHER), true)
 #    $(call inherit-product, vendor/addons/prebuilt/app/OPLauncher/OPLauncher.mk)
