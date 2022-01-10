@@ -1,5 +1,6 @@
 # Copyright (C) 2018 The Superior OS Project
 # Copyright (C) 2020 Direwolf Inc for Project Sakura
+# Copyright (C) 2022 Beru Shinsetsu
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -13,14 +14,10 @@
 # limitations under the License.
 
 # Bootanimation
-ifeq ($(TARGET_BOOT_ANIMATION_RES),720)
-     PRODUCT_COPY_FILES += vendor/lineage/prebuilt/common/bootanimation/bootanimation-720.zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
-else ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
-     PRODUCT_COPY_FILES += vendor/lineage/prebuilt/common/bootanimation/bootanimation-1080.zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
-else ifeq ($(TARGET_BOOT_ANIMATION_RES),1440)
-     PRODUCT_COPY_FILES += vendor/lineage/prebuilt/common/bootanimation/bootanimation-1440.zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
-else
+ifeq ($(filter 720 1080 1440,$(TARGET_BOOT_ANIMATION_RES)),)
      $(warning TARGET_BOOT_ANIMATION_RES is invalid or undefined, using generic bootanimation)
-PRODUCT_COPY_FILES += \
-    vendor/lineage/prebuilt/common/bootanimation/bootanimation-720.zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
+     TARGET_BOOT_ANIMATION_RES := 720
 endif
+
+PRODUCT_COPY_FILES += \
+    vendor/lineage/prebuilt/common/bootanimation/bootanimation-$(TARGET_BOOT_ANIMATION_RES).zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
