@@ -19,5 +19,12 @@ ifeq ($(filter 720 1080 1440,$(TARGET_BOOT_ANIMATION_RES)),)
      TARGET_BOOT_ANIMATION_RES := 720
 endif
 
+# We don't know if the maintainer added space after definition in tree.
+# (E.g. "TARGET_BOOT_ANIMATION_RES := 720 # Random thing)
+# This causes COPY_FILES to malfunction, so delete everything after
+# first space out. There shouldn't be a space before the actual value
+# anyway, Rest In Pepperoni if there is. xD
+TARGET_BOOT_ANIMATION_RES := $(shell echo $(TARGET_BOOT_ANIMATION_RES) | sed -e 's/ .*//')
+
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/bootanimation/bootanimation-$(TARGET_BOOT_ANIMATION_RES).zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
