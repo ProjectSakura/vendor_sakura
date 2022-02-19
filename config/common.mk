@@ -201,10 +201,16 @@ ifeq ($(SAKURA_OFFICIAL), true)
     Updater
 endif
 
-#Gapps
-ifeq ($(SAKURA_GAPPS), true)
-    $(call inherit-product, vendor/gapps/gapps.mk)
-    SAKURA_BUILD_ZIP_TYPE := GAPPS
+# build type
+ifeq ($(SAKURA_BUILD_TYPE), coregapps)
+    $(call inherit-product, vendor/gapps/core/config.mk)
+    SAKURA_BUILD_ZIP_TYPE := GAPPS-Core
+else ifeq ($(SAKURA_BUILD_TYPE), basicgapps)
+    $(call inherit-product, vendor/gapps/basic/config.mk)
+    SAKURA_BUILD_ZIP_TYPE := GAPPS-Basic
+else ifeq ($(SAKURA_BUILD_TYPE), microg)
+    $(call inherit-product, prebuilts/prebuiltapks/microg.mk)
+    SAKURA_BUILD_ZIP_TYPE := MICROG
 endif
 
 # Increase sakura Version with each major release.
