@@ -1,6 +1,7 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 $(call inherit-product-if-exists, vendor/lineage/config/sakura.mk)
+$(call inherit-product-if-exists, external/faceunlock/config.mk)
 
 # Bootanimation
 include vendor/lineage/config/bootanimation.mk
