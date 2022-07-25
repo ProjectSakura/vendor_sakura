@@ -9,20 +9,18 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # AOSP packages
 PRODUCT_PACKAGES += \
-    Exchange2 \
-    ExactCalculator
+    Exchange2
 
 # Lineage packages
 PRODUCT_PACKAGES += \
     Backgrounds \
     Custom-Fonts \
     Eleven \
-    Etar \
     Firewall \
-    Jelly \
     OmniJaws \
     OmniStyle \
     Profiles \
+    Calculator \
     Seedvault \
     SakuraWidget \
     StitchImage \
