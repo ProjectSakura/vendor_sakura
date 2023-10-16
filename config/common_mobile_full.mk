@@ -27,12 +27,6 @@ PRODUCT_PACKAGES += \
     unrar \
     zstd
 
-# Fonts
-PRODUCT_PACKAGES += \
-    fonts_customization.xml \
-    FontLatoOverlay \
-    FontRubikOverlay
-
 # Include Lineage LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/dictionaries
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay/dictionaries
