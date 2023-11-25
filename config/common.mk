@@ -5,6 +5,12 @@ $(call inherit-product-if-exists, vendor/addons/config.mk)
 # Bootanimation
 include vendor/lineage/config/bootanimation.mk
 
+# Pixel additions
+ifeq ($(WITH_GMS),true)
+$(call inherit-product, vendor/pixel-framework/config.mk)
+$(call inherit-product, vendor/pixel-style/config/common.mk)
+endif
+
 PRODUCT_BRAND ?= ProjectSakura
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
