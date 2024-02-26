@@ -1,10 +1,12 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
+$(call inherit-product-if-exists, vendor/lineage/config/sakura.mk)
+$(call inherit-product-if-exists, vendor/addons/config.mk)
 
 # Allow vendor prebuilt repos to exclude themselves from bp scanning
 -include $(sort $(wildcard vendor/*/*/exclude-bp.mk))
 
-PRODUCT_BRAND ?= LineageOS
+PRODUCT_BRAND ?= ProjectSakura
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -125,12 +127,9 @@ TARGET_SCREEN_HEIGHT ?= 1920
 PRODUCT_PACKAGES += \
     bootanimation.zip
 
-# Lineage packages
-ifeq ($(PRODUCT_IS_ATV),)
+# Build Manifest
 PRODUCT_PACKAGES += \
-    ExactCalculator \
-    Jelly
-endif
+    build-manifest
 
 ifeq ($(PRODUCT_IS_AUTOMOTIVE),)
 PRODUCT_PACKAGES += \
@@ -139,8 +138,7 @@ PRODUCT_PACKAGES += \
 endif
 
 PRODUCT_PACKAGES += \
-    LineageSettingsProvider \
-    Updater
+    LineageSettingsProvider
 
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/etc/init/init.lineage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-updater.rc
@@ -244,11 +242,6 @@ endif
 # Audio files
 $(call inherit-product, vendor/lineage/audio/audio.mk)
 
-# SetupWizard
-PRODUCT_PRODUCT_PROPERTIES += \
-    setupwizard.theme=glif_v4 \
-    setupwizard.feature.day_night_mode_enabled=true
-
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay/no-rro
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/lineage/overlay/common \
@@ -274,9 +267,22 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/lineage/config/device_frame
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/lineage/build/target/product/security/lineage
 
-include vendor/lineage/config/version.mk
+# Official and Unoffical
+ifeq ($(SAKURA_OFFICIAL), true)
+    SAKURA_BUILD := OFFICIAL
+else
+    SAKURA_BUILD := UNOFFICIAL
+endif
 
--include vendor/lineage-priv/keys/keys.mk
+# Build type
+ifeq ($(SAKURA_BUILD_TYPE), gapps)
+     SAKURA_BUILD_ZIP_TYPE := GAPPS
+     $(call inherit-product, vendor/gms/common/common-vendor.mk)
+else
+     SAKURA_BUILD_ZIP_TYPE := VANILLA
+endif
+
+include vendor/lineage/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
