@@ -4,7 +4,7 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 endif
 
-# LineageOS System Version
+# Project Sakura System Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.lineage.version=$(LINEAGE_VERSION) \
     ro.lineage.releasetype=$(LINEAGE_BUILDTYPE) \
@@ -23,3 +23,7 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
 # LineageOS Platform Internal Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.lineage.build.version.plat.rev=$(LINEAGE_PLATFORM_REV)
+
+# Additional sakura props
+ADDITIONAL_SYSTEM_PROPERTIES += \
+    ro.sakura.maintainer=$(SAKURA_MAINTAINER)

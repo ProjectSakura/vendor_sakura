@@ -1,7 +1,7 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
-PRODUCT_BRAND ?= LineageOS
+PRODUCT_BRAND ?= ProjectSakura
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -105,12 +105,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     build-manifest
 
-# Lineage packages
-ifeq ($(PRODUCT_IS_ATV),)
-PRODUCT_PACKAGES += \
-    ExactCalculator \
-    Jelly
-endif
+# # Lineage packages
+# ifeq ($(PRODUCT_IS_ATV),)
+# PRODUCT_PACKAGES += \
+#     ExactCalculator \
+#     Jelly
+# endif
 
 ifeq ($(PRODUCT_IS_AUTOMOTIVE),)
 PRODUCT_PACKAGES += \
@@ -119,8 +119,7 @@ PRODUCT_PACKAGES += \
 endif
 
 PRODUCT_PACKAGES += \
-    LineageSettingsProvider \
-    Updater
+    LineageSettingsProvider
 
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/etc/init/init.lineage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-updater.rc
@@ -209,11 +208,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.systemuicompilerfilter=speed
 
-# SetupWizard
-PRODUCT_PRODUCT_PROPERTIES += \
-    setupwizard.theme=glif_v4 \
-    setupwizard.feature.day_night_mode_enabled=true
-
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay/no-rro
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/lineage/overlay/common \
@@ -236,9 +230,33 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/crowdin/overlay
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/lineage/build/target/product/security/lineage
 
-include vendor/lineage/config/version.mk
+# Official and Unoffical
+ifeq ($(SAKURA_OFFICIAL), true)
+include vendor/sakura-priv/keys.mk
+    SAKURA_BUILD := OFFICIAL
+    PRODUCT_PACKAGES += \
+    Updater
+endif
 
--include vendor/lineage-priv/keys/keys.mk
+# # Build type
+# ifeq ($(SAKURA_BUILD_TYPE), coregapps)
+#     $(call inherit-product, vendor/gapps/core/config.mk)
+#     SAKURA_BUILD_ZIP_TYPE := GAPPS-Core
+# else ifeq ($(SAKURA_BUILD_TYPE), basicgapps)
+#     $(call inherit-product, vendor/gapps/basic/config.mk)
+#     SAKURA_BUILD_ZIP_TYPE := GAPPS-Basic
+# else ifeq ($(SAKURA_BUILD_TYPE), microg)
+#     $(call inherit-product, prebuilts/prebuiltapks/microg.mk)
+#     SAKURA_BUILD_ZIP_TYPE := MICROG
+# endif
+
+# Gapps
+#ifeq ($(SAKURA_GAPPS), true)
+#￼   $(call inherit-product, vendor/gapps/config.mk)
+#￼   SAKURA_BUILD_ZIP_TYPE := GAPPS
+#endif
+
+include vendor/lineage/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
