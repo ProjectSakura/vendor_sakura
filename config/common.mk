@@ -239,9 +239,8 @@ endif
 ifeq ($(SAKURA_BUILD_TYPE), gapps)
      $(call inherit-product, vendor/gms/products/gms.mk)
      SAKURA_BUILD_ZIP_TYPE := GAPPS
-else ifeq ($(SAKURA_BUILD_TYPE), basic)
-     #$(call inherit-product, vendor/gapps/basic/config.mk)
-     #SAKURA_BUILD_ZIP_TYPE := GAPPS-Basic
+else 
+     SAKURA_BUILD_ZIP_TYPE := VANILLA
 endif
 
 # Gapps
