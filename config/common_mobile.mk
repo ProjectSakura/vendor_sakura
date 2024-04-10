@@ -18,6 +18,7 @@ PRODUCT_PACKAGES += \
     Backgrounds \
     Glimpse \
     Vimusic \
+    Etar \
     Calculator
 
 ifeq ($(PRODUCT_TYPE), go)
