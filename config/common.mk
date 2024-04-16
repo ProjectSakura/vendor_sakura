@@ -237,7 +237,7 @@ endif
 
 # Build type
 ifeq ($(SAKURA_BUILD_TYPE), gapps)
-     $(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+     $(call inherit-product-if-exists, vendor/gapps/common/common-vendor.mk)
      SAKURA_BUILD_ZIP_TYPE := GAPPS
 else
      SAKURA_BUILD_ZIP_TYPE := VANILLA
