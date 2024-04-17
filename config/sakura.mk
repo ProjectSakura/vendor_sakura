@@ -16,7 +16,8 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     BatteryStatsViewer \
     GameSpace \
-    OmniJaws
+    OmniJaws \
+    OmniStyle
 
 ifeq ($(TARGET_SUPPORTS_64_BIT_APPS),true)
 PRODUCT_PACKAGES += \

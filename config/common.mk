@@ -120,6 +120,10 @@ endif
 PRODUCT_PACKAGES += \
     build-manifest
 
+#Extra Apps
+PRODUCT_PACKAGES += \
+    Updater
+
 # # Lineage packages
 # ifeq ($(PRODUCT_IS_ATV),)
 # PRODUCT_PACKAGES += \
@@ -271,7 +275,7 @@ endif
 ifeq ($(SAKURA_BUILD_TYPE), gapps)
      $(call inherit-product, vendor/gms/products/gms.mk)
      SAKURA_BUILD_ZIP_TYPE := GAPPS
-else 
+else
      SAKURA_BUILD_ZIP_TYPE := VANILLA
 endif
 
