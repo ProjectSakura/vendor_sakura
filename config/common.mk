@@ -102,6 +102,11 @@ endif
 PRODUCT_PACKAGES += \
     build-manifest
 
+#Extra Apps
+PRODUCT_PACKAGES += \
+    Updater \
+    OmniStyle
+
 # # Lineage packages
 # ifeq ($(PRODUCT_IS_ATV),)
 # PRODUCT_PACKAGES += \
@@ -231,8 +236,6 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 ifeq ($(SAKURA_OFFICIAL), true)
 include vendor/sakura-priv/keys.mk
     SAKURA_BUILD := OFFICIAL
-    PRODUCT_PACKAGES += \
-    Updater
 endif
 
 # Build type
