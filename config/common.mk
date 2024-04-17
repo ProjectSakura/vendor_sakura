@@ -135,8 +135,7 @@ PRODUCT_PACKAGES += \
 
 #Extra Apps
 PRODUCT_PACKAGES += \
-    Updater \
-    OmniStyle
+    Updater
 
 # # Lineage packages
 # ifeq ($(PRODUCT_IS_ATV),)
