@@ -259,7 +259,7 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 
 # Official and Unoffical
 ifeq ($(SAKURA_OFFICIAL), true)
-include vendor/sakura-priv/keys.mk
+#include vendor/sakura-priv/keys.mk
     SAKURA_BUILD := OFFICIAL
     PRODUCT_PACKAGES += \
     Updater
