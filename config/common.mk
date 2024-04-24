@@ -1,11 +1,22 @@
+
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 $(call inherit-product-if-exists, vendor/addons/config.mk)
+$(call inherit-product-if-exists, vendor/certification/config.mk)
+$(call inherit-product-if-exists, vendor/lineage/config/sakura.mk)
+$(call inherit-product-if-exists, vendor/pixel-framework/config.mk)
+
+# Pixel additions
+ifeq ($(WITH_GMS),true)
+$(call inherit-product, vendor/pixel-style/config/common.mk)
+endif
 
 # Bootanimation
 include vendor/lineage/config/bootanimation.mk
 
 PRODUCT_BRAND ?= ProjectSakura
+
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -81,10 +92,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:$(TARGET_COPY_OUT_PRODUCT)/usr/keylayout/Vendor_045e_Product_0719.kl
 
-# Component overrides
-PRODUCT_PACKAGES += \
-    lineage-component-overrides.xml
-
 # This is Lineage!
 PRODUCT_COPY_FILES += \
     vendor/lineage/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.android.xml
@@ -100,11 +107,19 @@ endif
 
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+PRODUCT_SYSTEM_SERVER_DEBUG_INFO := false
+WITH_DEXPREOPT_DEBUG_INFO := false
 
 # Strip the local variable table and the local variable type table to reduce
 # the size of the system image. This has no bearing on stack traces, but will
 # leave less information available via JDWP.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+
+# Enable whole-program R8 Java optimizations for SystemUI and system_server,
+# but also allow explicit overriding for testing and development.
+SYSTEM_OPTIMIZE_JAVA ?= true
+SYSTEMUI_OPTIMIZE_JAVA ?= true
 
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
@@ -117,6 +132,13 @@ endif
 # Build Manifest
 PRODUCT_PACKAGES += \
     build-manifest
+
+#Extra Apps
+ifeq ($(WITH_GMS),false)
+
+PRODUCT_PACKAGES += \
+    Updater \
+    OmniStyle
 
 # # Lineage packages
 # ifeq ($(PRODUCT_IS_ATV),)
@@ -139,7 +161,6 @@ PRODUCT_COPY_FILES += \
 
 # Config
 PRODUCT_PACKAGES += \
-    SimpleDeviceConfig \
     SimpleSettingsConfig
 
 # Extra tools in Lineage
@@ -218,16 +239,13 @@ endif
 
 # SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
+    Launcher3QuickStep \
+    Settings \
     CarSystemUI \
     SystemUI
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.systemuicompilerfilter=speed
-
-ifeq ($(TARGET_BUILD_VARIANT),userdebug)
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    debug.sf.enable_transaction_tracing=false
-endif
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay/no-rro
 PRODUCT_PACKAGE_OVERLAYS += \
@@ -254,35 +272,19 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 # Official and Unoffical
 ifeq ($(SAKURA_OFFICIAL), true)
     SAKURA_BUILD := OFFICIAL
-    PRODUCT_PACKAGES += \
-    Updater
 else
     SAKURA_BUILD := UNOFFICIAL
 endif
 
-# Gapps
-WITH_GMS ?= true
-SAKURA_BUILD_TYPE ?= gapps
-
 # Build type
 ifeq ($(SAKURA_BUILD_TYPE), gapps)
+     $(call inherit-product-if-exists, vendor/gapps/common/common-vendor.mk)
      SAKURA_BUILD_ZIP_TYPE := GAPPS
 else
      SAKURA_BUILD_ZIP_TYPE := VANILLA
-endif
-
-# GMS
-ifeq ($(WITH_GMS),true)
-ifeq ($(TARGET_USES_MINI_GAPPS),true)
-    $(call inherit-product, vendor/gms/gms_mini.mk)
-else ifeq ($(TARGET_USES_PICO_GAPPS),true)
-    $(call inherit-product, vendor/gms/gms_pico.mk)
-else
-    $(call inherit-product, vendor/gms/gms_full.mk)
 endif
 endif
 
 include vendor/lineage/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
--include vendor/lineage/config/partner_gms.mk
