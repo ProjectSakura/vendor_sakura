@@ -17,6 +17,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     Backgrounds \
     Glimpse \
+    Datura \
     Etar
 
 ifeq ($(PRODUCT_TYPE), go)
