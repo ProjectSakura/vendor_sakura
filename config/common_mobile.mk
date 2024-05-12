@@ -17,9 +17,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     Backgrounds \
     Glimpse \
-    Vimusic \
-    Etar \
-    Calculator
+    Etar
 
 ifeq ($(PRODUCT_TYPE), go)
 PRODUCT_PACKAGES += \
