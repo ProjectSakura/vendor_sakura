@@ -136,6 +136,7 @@ PRODUCT_PACKAGES += \
 
 #Extra Apps
 PRODUCT_PACKAGES += \
+    GameSpace \
     Updater \
     OmniStyle
 
