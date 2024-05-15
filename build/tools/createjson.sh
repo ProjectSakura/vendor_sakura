@@ -16,7 +16,7 @@ echo ' "id":' "\"$((md5sum $OUT/ProjectSakura*.zip) | cut -d ' ' -f1)\","
 echo ' "romtype":'"\"nightly\","
 echo ' "size":' "$(stat -c%s $OUT/ProjectSakura*.zip)",
 echo ' "url":' "\"https://master.dl.sourceforge.net/project/projectsakura/$LINEAGE_BUILD/$(basename $(ls $OUT/ProjectSakura*.zip))\","
-echo ' "version":' "\"9.0\""
+echo ' "version":' "\"9.1\""
 echo "}"
 echo "]"
 echo "}"
