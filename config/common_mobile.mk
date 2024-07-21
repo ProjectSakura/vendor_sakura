@@ -18,7 +18,8 @@ PRODUCT_PACKAGES += \
     Backgrounds \
     Glimpse \
     Datura \
-    Etar
+    Etar \
+    LatinIME
 
 ifeq ($(PRODUCT_TYPE), go)
 PRODUCT_PACKAGES += \
