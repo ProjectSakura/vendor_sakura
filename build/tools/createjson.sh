@@ -18,7 +18,7 @@ echo ' "size":' "$(stat -c%s $OUT/ProjectSakura*.zip)",
 echo ' "support":' "false,"
 echo ' "url":' "\"https://master.dl.sourceforge.net/project/projectsakura/$LINEAGE_BUILD/$(basename $(ls $OUT/ProjectSakura*.zip))\","
 echo ' "updater":' "true,"
-echo ' "version":' "\"9.3\""
+echo ' "version":' "\"9.4\""
 echo "}"
 echo "]"
 echo "}"
