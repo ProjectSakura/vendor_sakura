@@ -35,6 +35,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.surface_flinger.supports_background_blur=1
 endif
 
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.launcher.blur.appLaunch=0
+
 # Extra cmdline tools
 PRODUCT_PACKAGES += \
     unrar \
