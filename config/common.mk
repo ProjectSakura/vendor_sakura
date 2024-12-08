@@ -2,6 +2,7 @@
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 $(call inherit-product-if-exists, vendor/lineage/config/sakura.mk)
 $(call inherit-product-if-exists, vendor/addons/config.mk)
+$(call inherit-product-if-exists, vendor/certification/config.mk)
 
 # Exclude kernel platform repos from bp scanning
 PRODUCT_SOURCE_ROOT_DIRS += -kernel/platform
