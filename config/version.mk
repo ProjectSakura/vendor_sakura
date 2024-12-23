@@ -8,4 +8,9 @@ LINEAGE_VERSION := ProjectSakura-$(LINEAGE_DISPLAY_VERSION)-$(shell date +%Y%m%d
 SAKURA_VERSION := $(LINEAGE_VERSION)
 
 # Signing
--include vendor/sakura-priv/keys.mk
+ifeq ($(SAKURA_OFFICIAL),true)
+  $(if $(wildcard vendor/sakura-priv/keys.mk),,$(error Official builds require signing keys at vendor/sakura-priv/keys.mk))
+  include vendor/sakura-priv/keys.mk
+else
+  -include vendor/sakura-priv/keys.mk
+endif
