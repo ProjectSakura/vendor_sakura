@@ -15,6 +15,7 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
 # LineageOS Platform Display Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.lineage.display.version=$(LINEAGE_DISPLAY_VERSION) \
+    ro.sakura.ziptype=$(SAKURA_BUILD_ZIP_TYPE) \
     ro.sakura.display.version=$(SAKURA_BUILD)
 
 # LineageOS Platform SDK Version
