@@ -272,26 +272,12 @@ else
     SAKURA_BUILD := UNOFFICIAL
 endif
 
-# Gapps
-WITH_GMS ?= true
-SAKURA_BUILD_TYPE ?= gapps
-
 # Build type
 ifeq ($(SAKURA_BUILD_TYPE), gapps)
      SAKURA_BUILD_ZIP_TYPE := GAPPS
+     $(call inherit-product, vendor/gms/common/common-vendor.mk)
 else
      SAKURA_BUILD_ZIP_TYPE := VANILLA
-endif
-
-# GMS
-ifeq ($(WITH_GMS),true)
-ifeq ($(TARGET_USES_MINI_GAPPS),true)
-    $(call inherit-product, vendor/gms/gms_mini.mk)
-else ifeq ($(TARGET_USES_PICO_GAPPS),true)
-    $(call inherit-product, vendor/gms/gms_pico.mk)
-else
-    $(call inherit-product, vendor/gms/gms_full.mk)
-endif
 endif
 
 include vendor/lineage/config/version.mk
