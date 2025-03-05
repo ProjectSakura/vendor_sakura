@@ -275,15 +275,10 @@ endif
 ifeq ($(SAKURA_BUILD_TYPE), gapps)
      $(call inherit-product, vendor/gms/products/gms.mk)
      SAKURA_BUILD_ZIP_TYPE := GAPPS
+     $(call inherit-product, vendor/gms/common/common-vendor.mk)
 else
      SAKURA_BUILD_ZIP_TYPE := VANILLA
 endif
-
-# Gapps
-#ifeq ($(SAKURA_GAPPS), true)
-#￼   $(call inherit-product, vendor/gms/products/gms.mk)
-#￼   SAKURA_BUILD_ZIP_TYPE := GAPPS
-#endif
 
 include vendor/lineage/config/version.mk
 
