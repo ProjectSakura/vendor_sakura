@@ -120,8 +120,9 @@ endif
 PRODUCT_PACKAGES += \
     build-manifest
 
-#Extra Apps
+#Sakura Packages
 PRODUCT_PACKAGES += \
+    TrebuchetQuickStep \
     Updater
 
 # # Lineage packages
