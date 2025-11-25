@@ -13,7 +13,7 @@ echo -e ${ylw}"* ┃╰━╯┣━┳━━╋╋━━┳━┻╮╭╯┃╰
 echo -e ${ylw}"* ┃╭━━┫╭┫╭╮┣┫┃━┫╭━┫┃╱╰━━╮┃╭╮┃╰╯┫┃┃┃╭┫╭╮┃                                  "
 echo -e ${ylw}"* ┃┃╱╱┃┃┃╰╯┃┃┃━┫╰━┫╰╮┃╰━╯┃╭╮┃╭╮┫╰╯┃┃┃╭╮┃                                  "
 echo -e ${ylw}"* ╰╯╱╱╰╯╰━━┫┣━━┻━━┻━╯╰━━━┻╯╰┻╯╰┻━━┻╯╰╯╰╯                                  "
-echo -e ${ylw}"* ╱╱╱╱╱╱╱╱╭╯┃   BY LORDSHENRON & ReveRTX                                  "
+echo -e ${ylw}"* ╱╱╱╱╱╱╱╱╭╯┃   BY ArmSM & momenabdulrazekali                             "
 echo -e ${ylw}"* ╱╱╱╱╱╱╱╱╰━╯                                                             "
 echo -e ${cya}"* THANK YOU FOR BUILDING PROJECT SAKURA                                   "
 echo -e ${blu}"=========================================================================="
