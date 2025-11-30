@@ -51,6 +51,7 @@ PRODUCT_PACKAGES += \
     GameSpace \
     LMOFreeform \
     LMOFreeformSidebar \
+    LMOSystemUIClock \
     OmniJaws \
     OmniStyle
 
