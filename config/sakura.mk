@@ -43,5 +43,7 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     BatteryStatsViewer \
     GameSpace \
+    LMOFreeform \
+    LMOFreeformSidebar \
     OmniJaws \
     OmniStyle
