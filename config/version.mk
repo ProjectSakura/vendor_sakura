@@ -15,3 +15,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.sakura.display.version=$(SAKURA_BUILD) \
     ro.sakura.maintainer=$(SAKURA_MAINTAINER) \
     ro.modversion=$(SAKURA_VERSION)
+
+# Signing
+ifeq ($(SAKURA_OFFICIAL),true)
+  $(if $(wildcard vendor/sakura-priv/keys/keys.mk),,$(error Official builds require signing keys at vendor/sakura-priv/keys/keys.mk))
+  include vendor/sakura-priv/keys/keys.mk
+else
+  -include vendor/sakura-priv/keys/keys.mk
+endif
