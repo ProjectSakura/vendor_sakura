@@ -17,7 +17,7 @@ echo ' "romtype":'"\"nightly\","
 echo ' "size":' "$(stat -c%s $OUT/ProjectSakura*.zip)",
 echo ' "support":' "false,"
 echo ' "url":' "\"https://master.dl.sourceforge.net/project/projectsakura/$LINEAGE_BUILD/$(basename $(ls $OUT/ProjectSakura*.zip))\","
-echo ' "version":' "\"16.0.2\","
+echo ' "version":' "\"16.2.0\","
 echo ' "updater":' "true"
 echo "}"
 echo "]"
