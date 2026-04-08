@@ -16,6 +16,17 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.sakura.maintainer=$(SAKURA_MAINTAINER) \
     ro.modversion=$(SAKURA_VERSION)
 
+# flags
+PERF_ANIM_OVERRIDE ?= false
+
+ifeq ($(PERF_ANIM_OVERRIDE),true)
+PRODUCT_PRODUCT_PROPERTIES += \
+    debug.sf.predict_hwc_composition_strategy=0
+endif
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.activity_anim_perf_override=$(PERF_ANIM_OVERRIDE)
+
 # Signing
 ifeq ($(SAKURA_OFFICIAL),true)
   $(if $(wildcard vendor/sakura-priv/keys/keys.mk),,$(error Official builds require signing keys at vendor/sakura-priv/keys/keys.mk))
