@@ -16,6 +16,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.sakura.maintainer=$(SAKURA_MAINTAINER) \
     ro.modversion=$(SAKURA_VERSION)
 
+# flags
+PERF_ANIM_OVERRIDE ?= false
+
 # Signing
 ifeq ($(SAKURA_OFFICIAL),true)
   $(if $(wildcard vendor/sakura-priv/keys/keys.mk),,$(error Official builds require signing keys at vendor/sakura-priv/keys/keys.mk))
